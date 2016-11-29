@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  oracle:
+    image: wnameless/oracle-xe-11g
+    environment:
+      - ORACLE_ALLOW_REMOTE=true
+  infinispan:
+    image: jboss/infinispan-server:8.2.5.Final
+    command: custom/clustered-docker
+    depends_on:
+      - oracle
+    volumes:
+      - $PWD/driver:/opt/jboss/infinispan-server/modules/com/oracle/jdbc/driver/main/
+      - $PWD/custom:/opt/jboss/infinispan-server/standalone/configuration/custom
