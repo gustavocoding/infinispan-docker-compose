@@ -109,7 +109,7 @@
         <subsystem xmlns="urn:jboss:domain:datasources:4.0">
             <datasources>
                 <datasource enabled="true" jndi-name="java:jboss/datasources/OracleDS" pool-name="oracle">
-                    <connection-url>jdbc:oracle:thin:@oracle:1521:xe</connection-url>
+        <connection-url>jdbc:oracle:thin:@oracle:1521:xe</connection-url>
                     <connection-property name="oracle.net.encryption_client">accepted</connection-property>
                     <connection-property name="oracle.net.encryption_types_client">AES128</connection-property>
                     <connection-property name="oracle.jdbc.ReadTimeout">120000</connection-property>
